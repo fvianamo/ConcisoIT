@@ -9,4 +9,16 @@
             30
         </session-timeout>
     </session-config>
+    
+    <servlet>
+        <servlet-name>Coffee</servlet-name>
+        <servlet-class>com.example.web.CoffeeSelect</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Coffee</servlet-name>
+        <url-pattern>/SelectCoffee.do</url-pattern>
+    </servlet-mapping>
+  
 </web-app>
+
