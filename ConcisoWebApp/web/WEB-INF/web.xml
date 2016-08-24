@@ -16,6 +16,22 @@
         <servlet-name>update</servlet-name>
         <servlet-class>controller.update</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addBus</servlet-name>
+        <servlet-class>controller.addBus</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addStop</servlet-name>
+        <servlet-class>controller.addStop</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addRoute</servlet-name>
+        <servlet-class>controller.addRoute</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addRelation</servlet-name>
+        <servlet-class>controller.addRelation</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>listAll</servlet-name>
         <url-pattern>/listAll</url-pattern>
@@ -31,6 +47,22 @@
     <servlet-mapping>
         <servlet-name>update</servlet-name>
         <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addBus</servlet-name>
+        <url-pattern>/addBus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addStop</servlet-name>
+        <url-pattern>/addStop</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addRoute</servlet-name>
+        <url-pattern>/addRoute</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addRelation</servlet-name>
+        <url-pattern>/addRelation</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

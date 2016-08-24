@@ -71,11 +71,13 @@ public class listAll extends HttpServlet {
             out.println("<tr>");
             out.println("<td>id</td><td>Placa</td><td>Rota</td>");
             out.println("</tr>");
-            out.println("<tr>");
+            
             for(int i = 0; i < busList.size(); i++){
+                out.println("<tr>");
                 out.println("<td>" + busList.get(i).getBusID() + "</td><td>" + busList.get(i).getLicensePlate() + "</td><td>" + busList.get(i).getRouteFK()+ "</td>");
+                out.println("</tr>");
             }
-            out.println("</tr>");
+            
             out.println("</table>");
             
             out.println("<h2>Rotas de Ônibus cadastrados</h2>");
@@ -83,11 +85,11 @@ public class listAll extends HttpServlet {
             out.println("<tr>");
             out.println("<td>id</td><td>nome</td>");
             out.println("</tr>");
-            out.println("<tr>");
             for(int i = 0; i < routeList.size(); i++){
+                out.println("<tr>");
                 out.println("<td>" + routeList.get(i).getRouteID() + "</td><td>" + routeList.get(i).getName() + "</td>");
+                out.println("</tr>");
             }
-            out.println("</tr>");
             out.println("</table>");
             
             out.println("<h2>Paradas de Ônibus cadastrados</h2>");
@@ -95,11 +97,11 @@ public class listAll extends HttpServlet {
             out.println("<tr>");
             out.println("<td>id</td><td>latitude</td><td>longitude</td>");
             out.println("</tr>");
-            out.println("<tr>");
             for(int i = 0; i < stopList.size(); i++){
+                out.println("<tr>");
                 out.println("<td>" + stopList.get(i).getStopID()+ "</td><td>" + stopList.get(i).getLatit()+ "</td><td>" + stopList.get(i).getLongi()+ "</td>");
+                out.println("</tr>");
             }
-            out.println("</tr>");
             out.println("</table>");
             
             out.println("<h2>Relações de pertinência Parada Rota</h2>");
@@ -107,11 +109,11 @@ public class listAll extends HttpServlet {
             out.println("<tr>");
             out.println("<td>id</td><td>rota</td><td>parada</td>");
             out.println("</tr>");
-            out.println("<tr>");
             for(int i = 0; i < relationList.size(); i++){
+                out.println("<tr>");
                 out.println("<td>" + relationList.get(i).getRelationID()+ "</td><td>" + relationList.get(i).getRouteID()+ "</td><td>" + relationList.get(i).getStopID()+ "</td>");
+                out.println("</tr>");
             }
-            out.println("</tr>");
             out.println("</table>");
             
            out.println("<br><form method=\"post\" action=\"add\"><input type=\"submit\" value=\"Adicionar\"></form>\n" +

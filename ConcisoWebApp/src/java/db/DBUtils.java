@@ -25,7 +25,8 @@ public class DBUtils {
 
         conn = DriverManager.getConnection(url, user, password);
         //Create a statement object scrollable and updateable
-        st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        //st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        st = conn.createStatement();
     }
     
 }
