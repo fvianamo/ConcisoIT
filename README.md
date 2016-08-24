@@ -17,7 +17,7 @@ A web Application contem 4 pacotes, sendo eles:
 
 2. DBUtils: onde é implementada a classe que cria a conexão da web application com o banco de dados.
  
-3. DAO: onde são implementados as classes que fazem a interface entre a conexão e os objetos do banco.
+3. DAO: onde são implementadas as classes que fazem a interface entre a conexão e os objetos do banco.
 
 4. Controller: onde são implementados os servlets usados para gerar as paginas web.
 
