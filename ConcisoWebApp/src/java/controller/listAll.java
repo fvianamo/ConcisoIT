@@ -57,8 +57,7 @@ public class listAll extends HttpServlet {
 "        padding: 0;\n" +
 "      }\n" +
 "      #map {\n" +
-"        height: 60%;\n" +
-"        align: center\n"+                    
+"        height: 100%;\n" +                    
 "      }\n" +
 "    </style>");
             out.println("</head>");
@@ -116,9 +115,32 @@ public class listAll extends HttpServlet {
             }
             out.println("</table>");
             
-           out.println("<br><form method=\"post\" action=\"add\"><input type=\"submit\" value=\"Adicionar\"></form>\n" +
+            out.println("<br><form method=\"post\" action=\"add\"><input type=\"submit\" value=\"Adicionar\"></form>\n" +
 "        <form method=\"post\" action=\"remove\"><input type=\"submit\" value=\"Remover\"></form>\n" +
 "        <form method=\"post\" action=\"update\"><input type=\"submit\" value=\"Atualizar\"></form>");
+            
+            //exemplo de uso googleMaps API - Simple Markers
+            out.println("<div id=\"map\"></div>\n" +
+"    <script>\n" +
+"\n" +
+"      function initMap() {\n" +
+"        var myLatLng = {lat: -25.363, lng: 131.044};\n" +
+"\n" +
+"        var map = new google.maps.Map(document.getElementById('map'), {\n" +
+"          zoom: 4,\n" +
+"          center: myLatLng\n" +
+"        });\n" +
+"\n" +
+"        var marker = new google.maps.Marker({\n" +
+"          position: myLatLng,\n" +
+"          map: map,\n" +
+"          title: 'Hello World!'\n" +
+"        });\n" +
+"      }\n" +
+"    </script>\n" +
+"    <script async defer\n" +
+"    src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyAYSOWTxFQSmagCt1OKibMI8E_SCtSlHoo&callback=initMap\">\n" +
+"    </script>");
             
             out.println("</body>");
             out.println("</html>");
