@@ -5,12 +5,18 @@
  */
 package controller;
 
+import dao.RouteDAO;
+import db.DBUtils;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Route;
 
 /**
  *
@@ -37,9 +43,24 @@ public class addRoute extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet addRoute</title>");            
             out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet addRoute at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
+            out.println("<body><center>");
+            
+            String name = (String) request.getParameter("name");
+            Route newRoute = new Route(0, name);
+            
+            try {
+                DBUtils dbManager = new DBUtils();
+                RouteDAO routeManager = new RouteDAO(dbManager);
+                
+                routeManager.addRoute(newRoute);
+                out.println("<H1>Rota adicionado com sucesso</H1>");
+                
+            } catch (SQLException | ClassNotFoundException ex) {
+                out.println("<H1>Ocorreu um problema!</H1>");
+            }
+            
+            out.println("<br><form method=\"post\" action=\"listAll\"><input type=\"submit\" value=\"Voltar\"></form>");
+            out.println("</center></body>");
             out.println("</html>");
         }
     }
