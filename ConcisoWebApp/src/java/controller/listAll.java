@@ -57,7 +57,8 @@ public class listAll extends HttpServlet {
 "        padding: 0;\n" +
 "      }\n" +
 "      #map {\n" +
-"        height: 100%;\n" +
+"        height: 60%;\n" +
+"        align: center\n"+                    
 "      }\n" +
 "    </style>");
             out.println("</head>");
@@ -77,10 +78,6 @@ public class listAll extends HttpServlet {
             out.println("</tr>");
             out.println("</table>");
             
-            out.print("<form method=\"post\" action=\"addBus\"> <input type=\"submit\" value=\"Adicionar\"> </form>");
-            out.print("<form method=\"post\" action=\"EditBus\"> <input type=\"submit\" value=\"Editar\"> </form>");
-            out.println("<form method=\"post\" action=\"removeBus\"> <input type=\"submit\" value=\"Remover\"> </form>");
-            
             out.println("<h2>Rotas de Ônibus cadastrados</h2>");
             out.println("<table border=\"1\">");
             out.println("<tr>");
@@ -92,10 +89,6 @@ public class listAll extends HttpServlet {
             }
             out.println("</tr>");
             out.println("</table>");
-            
-            out.print("<form method=\"post\" action=\"addRoute\"> <input type=\"submit\" value=\"Adicionar\"> </form>");
-            out.print("<form method=\"post\" action=\"EditRoute\"> <input type=\"submit\" value=\"Editar\"> </form>");
-            out.println("<form method=\"post\" action=\"removeRoute\"> <input type=\"submit\" value=\"Remover\"> </form>");
             
             out.println("<h2>Paradas de Ônibus cadastrados</h2>");
             out.println("<table border=\"1\">");
@@ -109,10 +102,6 @@ public class listAll extends HttpServlet {
             out.println("</tr>");
             out.println("</table>");
             
-            out.print("<form method=\"post\" action=\"addStop\"> <input type=\"submit\" value=\"Adicionar\"> </form>");
-            out.print("<form method=\"post\" action=\"EditStop\"> <input type=\"submit\" value=\"Editar\"> </form>");
-            out.println("<form method=\"post\" action=\"removeStop\"> <input type=\"submit\" value=\"Remover\"> </form>");
-            
             out.println("<h2>Relações de pertinência Parada Rota</h2>");
             out.println("<table border=\"1\">");
             out.println("<tr>");
@@ -125,11 +114,9 @@ public class listAll extends HttpServlet {
             out.println("</tr>");
             out.println("</table>");
             
-            out.print("<form method=\"post\" action=\"addRelation\"> <input type=\"submit\" value=\"Adicionar\"> </form>");
-            out.print("<form method=\"post\" action=\"EditRelation\"> <input type=\"submit\" value=\"Editar\"> </form>");
-            out.println("<form method=\"post\" action=\"removeRelation\"> <input type=\"submit\" value=\"Remover\"> </form>");
-            
-            
+           out.println("<br><form method=\"post\" action=\"add\"><input type=\"submit\" value=\"Adicionar\"></form>\n" +
+"        <form method=\"post\" action=\"remove\"><input type=\"submit\" value=\"Remover\"></form>\n" +
+"        <form method=\"post\" action=\"update\"><input type=\"submit\" value=\"Atualizar\"></form>");
             
             out.println("</body>");
             out.println("</html>");

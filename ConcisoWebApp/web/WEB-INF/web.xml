@@ -4,9 +4,33 @@
         <servlet-name>listAll</servlet-name>
         <servlet-class>controller.listAll</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>add</servlet-name>
+        <servlet-class>controller.add</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>remove</servlet-name>
+        <servlet-class>controller.remove</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>controller.update</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>listAll</servlet-name>
         <url-pattern>/listAll</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>remove</servlet-name>
+        <url-pattern>/remove</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/update</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
