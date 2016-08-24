@@ -11,8 +11,29 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <form method="post" action="listAll"><input type="submit" value="Voltar"></form>
-        <form method="post" action="remove"><input type="submit" value="Remover"></form>
-        <form method="post" action="update"><input type="submit" value="Atualizar"></form>
+        <form action="addRelation" method="POST">
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td>Rota</td>
+                        <td><select name="rotaID">
+                                <option></option>
+                                <option></option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>Parada</td>
+                        <td><select name="stopID">
+                                <option></option>
+                                <option></option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Adicionar" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
     </body>
 </html>
