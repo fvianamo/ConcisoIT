@@ -12,10 +12,13 @@ Para a implementação desse projeto foi usado um banco de dados mysql e uma web
 
 A web Application contem 4 pacotes, sendo eles:
 1. Model: onde são implementadas as classes ônibus, parada, rota e relação(dado que a relação parada:rota é do tipo n:n).
+2. 
 2. DBUtils: onde é implementada a classe que cria a conexão da web application com o banco de dados.
+3. 
 3. DAO: onde são implementados as classes que fazem a interface entre a conexão e os objetos do banco.
+4. 
 4. Controller: onde são implementados os servlets usados para gerar as paginas web.
- 
+5. 
 ##Experiência
 Inicialmente tive uma certa dificuldade para escolher as linguagens e ferramentas que iria utilizar pra esse projeto. Para o banco de dados tentei utilizar JavaBD e mySQL, acabei optando por mySQL. Para o desenvolvimento da web application java foi a escolha inicial dado minha experiência prévia com a linguagem. O problema realmente apareceu quando tentei gerar a paginas web. Em um primeiro ponto tentei usar JSP, infelizmente não tive muito sucesso. Após alguns bons dias tentando entender o JSP e implementar as paginas webs, decidi gerar os html diretamente dos servlets. Com essa estrategia consegui avançar, mas novos problemas surgiram.
 
