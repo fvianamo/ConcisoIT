@@ -5,12 +5,18 @@
  */
 package controller;
 
+import dao.RelationDAO;
+import db.DBUtils;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Relation;
 
 /**
  *
@@ -37,9 +43,25 @@ public class addRelation extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet addRelation</title>");            
             out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet addRelation at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
+            out.println("<body><center>");
+            
+            int routeID = Integer.parseInt(request.getParameter("rotaID"));
+            int stopID = Integer.parseInt(request.getParameter("stopID"));
+            
+            Relation newRelation = new Relation(0, routeID, stopID);
+            
+            try {
+                DBUtils dbManager = new DBUtils();
+                RelationDAO relationManager = new RelationDAO(dbManager);
+                
+                relationManager.addRelation(newRelation);
+                out.println("<H1>Relação adicionado com sucesso</H1>");
+            } catch (SQLException | ClassNotFoundException ex) {
+                out.println("<H1>Ocorreu um problema!</H1>");
+            }
+            
+            out.println("<br><form method=\"post\" action=\"listAll\"><input type=\"submit\" value=\"Voltar\"></form>");
+            out.println("</center></body>");
             out.println("</html>");
         }
     }
