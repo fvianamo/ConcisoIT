@@ -20,10 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.*;
 
-/**
- *
- * @author filipeviana_
- */
+
 public class listAll extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException, ClassNotFoundException {
