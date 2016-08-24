@@ -11,10 +11,10 @@ public class DBUtils {
     public static Statement st;
     
     //substituir por url, user e password do database criado
-    private static final String url = "jdbc:mysql://localhost:3306/testmysql?zeroDateTimeBehavior=convertToNull";
+    private static final String url = "jdbc:mysql://localhost:3306/ConcisoIT";
     private static final String user = "root";
     private static final String password = "password";
-    
+       
     public static ResultSet dbConsult(String query) throws SQLException {
         return st.executeQuery(query);
     }
