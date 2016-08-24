@@ -6,7 +6,7 @@ Criar CRUD básico para cadastro de ônibus, linha de ônibus e paradas de ônib
 um ônibus pertence a 1 linha,
 uma parada pertence a N linhas e
 uma linha pertence a N paradas.
-Além disso, as paradas de ônibus deveriam ser exibidas em um map, com a descrição de quais linhas passam pela parada clicada.
+Além disso, as paradas de ônibus deveriam ser exibidas em um mapa, com a descrição de quais linhas passam pela parada clicada.
 
 ##Metodologia de Desenvolvimento
 Para a implementação desse projeto foi usado um banco de dados mysql e uma web application desenvolvida em java.
