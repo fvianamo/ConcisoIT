@@ -5,12 +5,18 @@
  */
 package controller;
 
+import dao.StopDAO;
+import db.DBUtils;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Stop;
 
 /**
  *
@@ -37,9 +43,25 @@ public class addStop extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet addStop</title>");            
             out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet addStop at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
+            out.println("<body><center>");
+            
+            double lat = Double.parseDouble(request.getParameter("latitude"));
+            double lon = Double.parseDouble(request.getParameter("longitude"));
+            
+            Stop newStop = new Stop(0, lat, lon);
+            
+            try {
+                DBUtils dbManager = new DBUtils();
+                StopDAO stopManager = new StopDAO(dbManager);
+                
+                stopManager.addStop(newStop);
+                out.println("<H1>Parada adicionado com sucesso</H1>");
+            } catch (SQLException | ClassNotFoundException ex) {
+                out.println("<H1>Ocorreu um problema!</H1>");
+            }
+            
+            out.println("<br><form method=\"post\" action=\"listAll\"><input type=\"submit\" value=\"Voltar\"></form>");
+            out.println("</center></body>");
             out.println("</html>");
         }
     }
